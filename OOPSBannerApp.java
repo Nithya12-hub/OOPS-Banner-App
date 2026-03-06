@@ -1,22 +1,26 @@
 /**
  * OOPSBannerApp
- * UC1: Print the text "OOPS" to the console
- * This is the first step of the OOPS Banner App project.
+ * UC2: Print the word "OOPS" as a stylized ASCII banner
+ * using a 7-line grid of asterisks.
  *
  * @author Nithya
- * @version 1.0
+ * @version 1.1
  */
 
 public class OOPSBannerApp {
 
     /**
-     * Main method - entry point of the Java program
-     * @param args command line arguments
+     * Main method - entry point of the program
      */
     public static void main(String[] args) {
 
-        // Print the banner text
-        System.out.println("OOPS");
+        System.out.println(" *****    *****    *****    ***** ");
+        System.out.println("*     *  *     *  *     *  *     *");
+        System.out.println("*     *  *     *  *     *  *     *");
+        System.out.println("*     *  *     *  *****    ***** ");
+        System.out.println("*     *  *     *  *        *      ");
+        System.out.println("*     *  *     *  *        *      ");
+        System.out.println(" *****    *****    *        *      ");
 
     }
 }
