@@ -1,17 +1,17 @@
 /**
  * OOPSBannerApp
- * UC4: Print the "OOPS" banner using String Array and Loop
- * Refactored for better modularity and reusability.
+ * UC5: Print the "OOPS" banner using concise array initialization
+ * and String.join() method.
  *
  * @author Nithya
- * @version 1.3
+ * @version 1.4
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Store banner lines in a String array
+        // Declare and initialize banner lines in one statement
         String[] bannerLines = {
             String.join("  ", " ***** ", " ***** ", " ***** ", " ***** "),
             String.join("  ", "*     *", "*     *", "*     *", "*     *"),
