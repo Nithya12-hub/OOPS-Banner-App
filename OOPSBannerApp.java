@@ -1,23 +1,30 @@
 /**
  * OOPSBannerApp
- * UC3: Print the "OOPS" banner using String.join()
- * This refactors UC2 to avoid string concatenation
- * and improve memory efficiency.
+ * UC4: Print the "OOPS" banner using String Array and Loop
+ * Refactored for better modularity and reusability.
  *
  * @author Nithya
- * @version 1.2
+ * @version 1.3
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join("  ", " ***** ", " ***** ", " ***** ", " ***** "));
-        System.out.println(String.join("  ", "*     *", "*     *", "*     *", "*     *"));
-        System.out.println(String.join("  ", "*     *", "*     *", "*     *", "*     *"));
-        System.out.println(String.join("  ", "*     *", "*     *", " ***** ", " ***** "));
-        System.out.println(String.join("  ", "*     *", "*     *", "*      ", "*      "));
-        System.out.println(String.join("  ", "*     *", "*     *", "*      ", "*      "));
-        System.out.println(String.join("  ", " ***** ", " ***** ", "*      ", "*      "));
+        // Store banner lines in a String array
+        String[] bannerLines = {
+            String.join("  ", " ***** ", " ***** ", " ***** ", " ***** "),
+            String.join("  ", "*     *", "*     *", "*     *", "*     *"),
+            String.join("  ", "*     *", "*     *", "*     *", "*     *"),
+            String.join("  ", "*     *", "*     *", " ***** ", " ***** "),
+            String.join("  ", "*     *", "*     *", "*      ", "*      "),
+            String.join("  ", "*     *", "*     *", "*      ", "*      "),
+            String.join("  ", " ***** ", " ***** ", "*      ", "*      ")
+        };
+
+        // Print banner using enhanced for loop
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
