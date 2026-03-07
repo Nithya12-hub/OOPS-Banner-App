@@ -1,26 +1,23 @@
 /**
  * OOPSBannerApp
- * UC2: Print the word "OOPS" as a stylized ASCII banner
- * using a 7-line grid of asterisks.
+ * UC3: Print the "OOPS" banner using String.join()
+ * This refactors UC2 to avoid string concatenation
+ * and improve memory efficiency.
  *
  * @author Nithya
- * @version 1.1
+ * @version 1.2
  */
 
 public class OOPSBannerApp {
 
-    /**
-     * Main method - entry point of the program
-     */
     public static void main(String[] args) {
 
-        System.out.println(" *****    *****    *****    ***** ");
-        System.out.println("*     *  *     *  *     *  *     *");
-        System.out.println("*     *  *     *  *     *  *     *");
-        System.out.println("*     *  *     *  *****    ***** ");
-        System.out.println("*     *  *     *  *        *      ");
-        System.out.println("*     *  *     *  *        *      ");
-        System.out.println(" *****    *****    *        *      ");
-
+        System.out.println(String.join("  ", " ***** ", " ***** ", " ***** ", " ***** "));
+        System.out.println(String.join("  ", "*     *", "*     *", "*     *", "*     *"));
+        System.out.println(String.join("  ", "*     *", "*     *", "*     *", "*     *"));
+        System.out.println(String.join("  ", "*     *", "*     *", " ***** ", " ***** "));
+        System.out.println(String.join("  ", "*     *", "*     *", "*      ", "*      "));
+        System.out.println(String.join("  ", "*     *", "*     *", "*      ", "*      "));
+        System.out.println(String.join("  ", " ***** ", " ***** ", "*      ", "*      "));
     }
 }
