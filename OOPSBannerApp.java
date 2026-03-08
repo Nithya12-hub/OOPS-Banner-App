@@ -1,30 +1,58 @@
-/**
- * OOPSBannerApp
- * UC5: Print the "OOPS" banner using concise array initialization
- * and String.join() method.
- *
- * @author Nithya
- * @version 1.4
- */
-
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-
-        // Declare and initialize banner lines in one statement
-        String[] bannerLines = {
-            String.join("  ", " ***** ", " ***** ", " ***** ", " ***** "),
-            String.join("  ", "*     *", "*     *", "*     *", "*     *"),
-            String.join("  ", "*     *", "*     *", "*     *", "*     *"),
-            String.join("  ", "*     *", "*     *", " ***** ", " ***** "),
-            String.join("  ", "*     *", "*     *", "*      ", "*      "),
-            String.join("  ", "*     *", "*     *", "*      ", "*      "),
-            String.join("  ", " ***** ", " ***** ", "*      ", "*      ")
+        // UC6: Modular array initialization using static methods
+        // Each method call returns a String[] representing the 5 rows of that letter
+        String[][] banner = {
+            getPatternO(),
+            getPatternO(),
+            getPatternP(),
+            getPatternS()
         };
 
-        // Print banner using enhanced for loop
-        for (String line : bannerLines) {
-            System.out.println(line);
+        renderBanner(banner);
+    }
+
+    // Helper method for Letter O
+    public static String[] getPatternO() {
+        return new String[] {
+            " ***** ",
+            "* *",
+            "* *",
+            "* *",
+            " ***** "
+        };
+    }
+
+    // Helper method for Letter P
+    public static String[] getPatternP() {
+        return new String[] {
+            "****** ",
+            "* *",
+            "****** ",
+            "* ",
+            "* "
+        };
+    }
+
+    // Helper method for Letter S
+    public static String[] getPatternS() {
+        return new String[] {
+            " ***** ",
+            "* ",
+            " **** ",
+            "     * ",
+            "***** "
+        };
+    }
+
+    // Reusable rendering logic
+    public static void renderBanner(String[][] banner) {
+        for (int i = 0; i < 5; i++) { // For each of the 5 rows
+            for (String[] letter : banner) { // For each letter in our O-O-P-S sequence
+                System.out.print(letter[i] + "  "); // Print the specific row of that letter
+            }
+            System.out.println(); // Move to next line
         }
     }
 }
