@@ -1,58 +1,51 @@
 public class OOPSBannerApp {
 
+    // UC7: Static Inner Class for encapsulation
+    static class CharacterPattern {
+        private char character;
+        private String[] lines;
+
+        public CharacterPattern(char character, String[] lines) {
+            this.character = character;
+            this.lines = lines;
+        }
+
+        public String getLine(int index) {
+            return lines[index];
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+    }
+
     public static void main(String[] args) {
-        // UC6: Modular array initialization using static methods
-        // Each method call returns a String[] representing the 5 rows of that letter
-        String[][] banner = {
-            getPatternO(),
-            getPatternO(),
-            getPatternP(),
-            getPatternS()
-        };
+        // Initialize our "Library" of character objects
+        CharacterPattern charO = new CharacterPattern('O', new String[]{
+            " ***** ", "* *", "* *", "* *", " ***** "
+        });
+        CharacterPattern charP = new CharacterPattern('P', new String[]{
+            "****** ", "* *", "****** ", "* ", "* "
+        });
+        CharacterPattern charS = new CharacterPattern('S', new String[]{
+            " ***** ", "* ", " **** ", "     * ", "***** "
+        });
+
+        // The banner is now a collection of Objects
+        CharacterPattern[] banner = { charO, charO, charP, charS };
 
         renderBanner(banner);
     }
 
-    // Helper method for Letter O
-    public static String[] getPatternO() {
-        return new String[] {
-            " ***** ",
-            "* *",
-            "* *",
-            "* *",
-            " ***** "
-        };
-    }
-
-    // Helper method for Letter P
-    public static String[] getPatternP() {
-        return new String[] {
-            "****** ",
-            "* *",
-            "****** ",
-            "* ",
-            "* "
-        };
-    }
-
-    // Helper method for Letter S
-    public static String[] getPatternS() {
-        return new String[] {
-            " ***** ",
-            "* ",
-            " **** ",
-            "     * ",
-            "***** "
-        };
-    }
-
-    // Reusable rendering logic
-    public static void renderBanner(String[][] banner) {
-        for (int i = 0; i < 5; i++) { // For each of the 5 rows
-            for (String[] letter : banner) { // For each letter in our O-O-P-S sequence
-                System.out.print(letter[i] + "  "); // Print the specific row of that letter
+    public static void renderBanner(CharacterPattern[] banner) {
+        StringBuilder sb = new StringBuilder();
+        
+        for (int i = 0; i < 5; i++) { // Loop through the 5 rows
+            for (CharacterPattern cp : banner) {
+                sb.append(cp.getLine(i)).append("  ");
             }
-            System.out.println(); // Move to next line
+            sb.append("\n");
         }
+        System.out.print(sb.toString());
     }
 }
